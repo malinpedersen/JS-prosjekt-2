@@ -4,11 +4,36 @@
     box-sizing: border-box;
 }
 
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: cadetblue;
+}
+
+.container{
+    display: flex;
+    width: 900px;
+    border: 2px black solid;
+    border-radius: 10px;
+    background-color: white;
+    padding: 45px;
+}
+
+.boks{
+    margin-top: 115px;
+}
+
 img{
     width: 100%;
 }
 
 .hangman > img {
-    height: 200px;
-    width: 200px;
+    height: 350px;
+    width: 350px;
+}
+
+h2 {
+    margin: 20px;
 }
