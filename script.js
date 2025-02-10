@@ -30,22 +30,33 @@ console.log(gjettetOrd)
 
 
 function gjettBokstav(bokstav) {
+    let funnet = false; 
+
     for (let i = 0; i < fasit.length; i++) {
         const element = fasit[i];
         if (element == bokstav) {
             console.log("bokstaven finnes på plass", i)
             gjettetOrd[i] = bokstav
-
+            funnet = true; 
         }
 
     }
+
+    if (funnet){
+        console.log("Bokstaven finnes i ordet:", bokstav)
+    } else{
+        console.log("Bokstavem finnes ikke i ordet:", bokstav)
+    }
+
     console.log(gjettetOrd)
     visGjettetOrd()
 }
 
-function visGjettetOrd(){
-
+function visGjettetOrd() {
+    document.getElementById("gjettetOrd").innerText = gjettetOrd.join(" ");
 }
+
+visGjettetOrd();
 
 function tasteTrykk(event) {
     gjettBokstav(event.key)
