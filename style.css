@@ -22,7 +22,7 @@ body{
 }
 
 .boks{
-    margin-top: 240px;
+    margin-top: 190px;
 }
 
 img{
@@ -36,10 +36,16 @@ img{
 
 h2 {
     margin: 20px;
+    font-size: 40px;
 }
 
 button{
     padding: 10px;
     border: 1px palevioletred solid;
     border-radius: 7px;
+}
+
+#gjettetOrd{
+    font-size: 40px;
+    margin-bottom: 24px;
 }
