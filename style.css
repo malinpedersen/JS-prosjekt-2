@@ -34,6 +34,19 @@ img{
     width: 350px;
 }
 
+.hangman{
+    position: relative;
+    display: inline-block;
+    margin-right: 120px;
+}
+
+.hangman img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 320px;
+}
+
 h2 {
     margin: 20px;
     font-size: 40px;

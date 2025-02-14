@@ -28,8 +28,21 @@ for (let i = 0; i < fasit.length; i++) {
 
 console.log(gjettetOrd)
 
+const maksFeil = 6;
+let feilGjett = 0; 
+const hangmanBilde = document.getElementById("hangmanBilde")
+
+const hangmanDeler =[
+    "bilder/hangmanHode.jpg",
+    "bilder/hangmanKropp.jpg",
+    "bilder/hangmanHArm.jpg",
+    "bilder/hangmanVArm.jpg",
+    "bilder/hangmanHFot.jpg",
+    "bilder/hangmanVFot.jpg",  
+]
 
 function gjettBokstav(bokstav) {
+
     let funnet = false; 
 
     for (let i = 0; i < fasit.length; i++) {
@@ -42,14 +55,25 @@ function gjettBokstav(bokstav) {
 
     }
 
-    if (funnet){
-        console.log("Bokstaven finnes i ordet:", bokstav)
-    } else{
+    if (!funnet){
+        feilGjett++;
+
+        if (feilGjett < maksFeil){
+            hangmanBilde.src = hangmanDeler[feilGjett];
+        }
+
         console.log("Bokstavem finnes ikke i ordet:", bokstav)
     }
 
-    console.log(gjettetOrd)
-    visGjettetOrd()
+    if (funnet){
+        console.log("Bokstaven finnes i ordet:", bokstav)
+    } 
+
+    visGjettetOrd();
+    
+    if (feilGjett >= maksFeil){
+        alert("Du tapte! Ordet var: " + fasit);
+    }
 }
 
 function visGjettetOrd() {
@@ -59,7 +83,7 @@ function visGjettetOrd() {
 visGjettetOrd();
 
 function tasteTrykk(event) {
-    gjettBokstav(event.key)
+    gjettBokstav(event.key.toLowerCase());
 
 }
 
