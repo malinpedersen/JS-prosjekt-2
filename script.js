@@ -34,6 +34,7 @@ let spillFerdig = false;
 const hangmanBilde = document.getElementById("hangmanBilde")
 
 const hangmanDeler = [
+    "",
     "bilder/hangmanHode.jpg",
     "bilder/hangmanKropp.jpg",
     "bilder/hangmanHArm.jpg",
