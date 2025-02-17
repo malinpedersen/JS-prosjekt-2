@@ -1,15 +1,18 @@
 function getRandomHangmanWord() {
     const hangmanWords = [
-        "Ananas", "Ballong", "Camping", "Drage", "Ekorn", "Flaske", "Gitar", "Huske", "Iskrem", "Jente",
-        "Kanel", "Lykke", "Måne", "Nøkkel", "Oter", "Papegøye", "Quiz", "Røyk", "Skole", "Traktor",
-        "Ulv", "Vind", "Ørn", "Ære", "Åker", "Blomst", "Sommer", "Høst", "Vinter", "Vår",
-        "Banan", "Skorpion", "Fotball", "Løve", "Klokke", "Fersken", "Regnbue", "Hytte", "Kaffekopp", "Bjørn",
-        "Sjø", "Sko", "Sykkel", "Tog", "Buss", "Elefant", "Tiger", "Kanin", "Vimpel", "Broccoli",
-        "Snømann", "Godteri", "Matpakke", "Skøyter", "Bølge", "Gaffel", "Briller", "Tårn", "Kirke", "Drøm",
-        "Kamera", "Kjøkken", "Lommelykt", "Måse", "Panda", "Rev", "Vott", "Skjorte", "Teppe", "Sjiraff",
-        "Snøfnugg", "Hårbørste", "Speil", "Sopp", "Eple", "Juletre", "Stjerne", "Glass", "Natt", "Dør",
-        "Hjul", "Skjerf", "Trapp", "Laks", "Skjelett", "Vulkan", "Fyrverkeri", "Støvel", "Håndkle", "Kald",
-        "Bok", "Slott", "Lykt", "Eventyr", "Dragebåt", "Flyplass", "Skygge", "Fakkel", "Skorpion", "Smørbrød"
+        "Albania", "Tirana", "Andorra", "Andorra la Vella", "Armenia", "Yerevan", "Østerrike", "Wien",
+        "Aserbajdsjan", "Baku", "Hviterussland", "Minsk", "Belgia", "Brussel", "Bosnia-Hercegovina", "Sarajevo",
+        "Bulgaria", "Sofia", "Kroatia", "Zagreb", "Kypros", "Nikosia", "Tsjekkia", "Praha",
+        "Danmark", "København", "Estland", "Tallinn", "Finland", "Helsinki", "Frankrike", "Paris",
+        "Georgia", "Tbilisi", "Tyskland", "Berlin", "Hellas", "Athen", "Ungarn", "Budapest",
+        "Island", "Reykjavik", "Irland", "Dublin", "Italia", "Roma", "Kasakhstan", "Astana",
+        "Latvia", "Riga", "Liechtenstein", "Vaduz", "Litauen", "Vilnius", "Luxembourg", "Luxembourg",
+        "Malta", "Valletta", "Moldova", "Chișinău", "Monaco", "Monaco", "Montenegro", "Podgorica",
+        "Nederland", "Amsterdam", "Nord-Makedonia", "Skopje", "Norge", "Oslo", "Polen", "Warszawa",
+        "Portugal", "Lisboa", "Romania", "București", "Russland", "Moskva", "San Marino", "San Marino",
+        "Serbia", "Beograd", "Slovakia", "Bratislava", "Slovenia", "Ljubljana", "Spania", "Madrid",
+        "Sverige", "Stockholm", "Sveits", "Bern", "Tyrkia", "Ankara", "Ukraina", "Kyiv",
+        "Storbritannia", "London", "Vatikanstaten", "Vatikanstaten"
     ];
 
     const randomIndex = Math.floor(Math.random() * hangmanWords.length);
