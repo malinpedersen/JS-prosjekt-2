@@ -18,11 +18,24 @@ body{
     border: 2px black solid;
     border-radius: 10px;
     background-color: white;
-    padding: 45px;
+    padding: 48px;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.ramme{
+    display: flex;
+    gap: 29px;
 }
 
 .boks{
-    margin-top: 190px;
+    margin-top: 38px;
+}
+
+.tastatur{
+    display: grid;
+    grid-template-columns: repeat(12, auto);
+    margin-top: 41px;
 }
 
 img{
@@ -32,12 +45,16 @@ img{
 .hangman > img {
     height: 350px;
     width: 350px;
+    width: 100%;
 }
 
 .hangman{
     position: relative;
     display: inline-block;
-    margin-right: 120px;
+    width: 320px; 
+    height: 350px;
+    margin-right: 0px;
+    width: 350px;
 }
 
 .hangman img {
@@ -48,17 +65,19 @@ img{
 }
 
 h2 {
-    margin: 20px;
+    text-align: center; 
     font-size: 40px;
+    margin-bottom: 20px; 
 }
 
 button{
     padding: 10px;
-    border: 1px palevioletred solid;
-    border-radius: 7px;
+    background-color: white;
+    margin: 1px;
 }
 
 #gjettetOrd{
     font-size: 40px;
     margin-bottom: 24px;
+    margin-top: 10px;
 }
