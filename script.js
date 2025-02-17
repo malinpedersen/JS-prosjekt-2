@@ -50,6 +50,9 @@ function oppdaterFeilGjett() {
 function gjettBokstav(bokstav) {
     if (spillFerdig) return;
 
+    let knapp = document.getElementById(bokstav)
+    if (!knapp) return;
+
     let funnet = false;
 
     for (let i = 0; i < fasit.length; i++) {
@@ -61,18 +64,16 @@ function gjettBokstav(bokstav) {
         }
     }
 
-    if (!funnet) {
+    if (funnet) {
+        console.log("Bokstaven finnes i ordet:", bokstav)
+        knapp.style.backgroundColor = "green";
+    } else{
+        knapp.style.backgroundColor = "red";
         feilGjett++;
-
         if (feilGjett < maksFeil) {
             hangmanBilde.src = hangmanDeler[feilGjett];
         }
-
         console.log("Bokstaven finnes ikke i ordet:", bokstav)
-    }
-
-    if (funnet) {
-        console.log("Bokstaven finnes i ordet:", bokstav)
     }
 
     visGjettetOrd();
