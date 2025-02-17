@@ -29,51 +29,63 @@ for (let i = 0; i < fasit.length; i++) {
 console.log(gjettetOrd)
 
 const maksFeil = 6;
-let feilGjett = 0; 
+let feilGjett = 0;
+let spillFerdig = false;
 const hangmanBilde = document.getElementById("hangmanBilde")
 
-const hangmanDeler =[
-    "",
+const hangmanDeler = [
     "bilder/hangmanHode.jpg",
     "bilder/hangmanKropp.jpg",
     "bilder/hangmanHArm.jpg",
     "bilder/hangmanVArm.jpg",
     "bilder/hangmanHFot.jpg",
-    "bilder/hangmanVFot.jpg",  
+    "bilder/hangmanVFot.jpg",
 ]
 
-function gjettBokstav(bokstav) {
+function oppdaterFeilGjett() {
+    let feilGjettElement = document.getElementById("feilGjett");
+    feilGjettElement.textContent = "Antall feilgjett: " + feilGjett + "/" + maksFeil;
+}
 
-    let funnet = false; 
+function gjettBokstav(bokstav) {
+    if (spillFerdig) return;
+
+    let funnet = false;
 
     for (let i = 0; i < fasit.length; i++) {
         const element = fasit[i];
         if (element == bokstav) {
             console.log("bokstaven finnes på plass", i)
             gjettetOrd[i] = bokstav
-            funnet = true; 
+            funnet = true;
         }
-
     }
 
-    if (!funnet){
+    if (!funnet) {
         feilGjett++;
 
-        if (feilGjett < maksFeil){
+        if (feilGjett < maksFeil) {
             hangmanBilde.src = hangmanDeler[feilGjett];
         }
 
-        console.log("Bokstavem finnes ikke i ordet:", bokstav)
+        console.log("Bokstaven finnes ikke i ordet:", bokstav)
     }
 
-    if (funnet){
+    if (funnet) {
         console.log("Bokstaven finnes i ordet:", bokstav)
-    } 
+    }
 
     visGjettetOrd();
-    
-    if (feilGjett >= maksFeil){
+    oppdaterFeilGjett();
+
+    if (!gjettetOrd.includes("_")) {
+        alert("Gratulerer! Du vant! Ordet var: " + fasit);
+        spillFerdig = true;
+    }
+
+    else if (feilGjett >= maksFeil) {
         alert("Du tapte! Ordet var: " + fasit);
+        spillFerdig = true;
     }
 }
 
