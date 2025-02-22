@@ -20,7 +20,7 @@ function getRandomHangmanWord() {
 }
 
 
-const fasit = getRandomHangmanWord()
+let fasit = getRandomHangmanWord()
 console.log(fasit);
 
 let gjettetOrd = []
@@ -70,7 +70,7 @@ function gjettBokstav(bokstav) {
     if (funnet) {
         console.log("Bokstaven finnes i ordet:", bokstav)
         knapp.style.backgroundColor = "green";
-    } else{
+    } else {
         knapp.style.backgroundColor = "red";
         if (feilGjett < maksFeil) {
             hangmanBilde.src = hangmanDeler[feilGjett];
@@ -82,24 +82,24 @@ function gjettBokstav(bokstav) {
 
     visGjettetOrd();
     oppdaterFeilGjett();
-    
+
     const lydSeier = new Audio("lyder/seier.mp3")
     const lydTap = new Audio("lyder/tap.mp3")
 
     if (!gjettetOrd.includes("_")) {
         lydSeier.play()
-        setTimeout(function() {
+        setTimeout(function () {
             alert("Gratulerer! Du vant! Ordet var: " + fasit);
             spillFerdig = true;
-          }, 10);
+        }, 10);
     }
 
     else if (feilGjett >= maksFeil) {
-        lydTap.play() 
-        setTimeout(function() {
+        lydTap.play()
+        setTimeout(function () {
             alert("Du tapte! Ordet var: " + fasit);
             spillFerdig = true;
-          }, 100);
+        }, 100);
     }
 }
 
@@ -107,11 +107,33 @@ function visGjettetOrd() {
     document.getElementById("gjettetOrd").innerText = gjettetOrd.join(" ");
 }
 
-visGjettetOrd();
-
 function tasteTrykk(event) {
     gjettBokstav(event.key.toLowerCase());
-
 }
 
+function omstartSpill() {
+    feilGjett = 0
+    spillFerdig = false
+
+    fasit = getRandomHangmanWord();
+    gjettetOrd = [];
+
+    for (let i = 0; i < fasit.length; i++) {
+        gjettetOrd.push("_");
+    }
+
+    visGjettetOrd();
+    oppdaterFeilGjett();
+    hangmanBilde.src = "bilder/stativ.jpg";
+
+    let alleTastene = document.querySelectorAll(".tastatur button");
+
+    for (let i = 0; i < alleTastene.length; i++) {
+        let knapp = alleTastene[i];
+        knapp.style.backgroundColor = "";
+    }
+}
+
+visGjettetOrd();
 document.addEventListener("keydown", tasteTrykk)
+document.getElementById("resetKnapp").addEventListener("click", omstartSpill);
