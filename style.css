@@ -49,22 +49,15 @@ body{
     margin-top: 41px;
 }
 
-img{
-    width: 100%;
-}
-
 .hangman > img {
     height: 350px;
-    width: 350px;
-    width: 100%;
 }
 
 .hangman{
     position: relative;
     display: inline-block;
-    width: 320px; 
-    height: 350px;
     margin-right: 0px;
+    height: 350px;
     width: 350px;
 }
 
@@ -110,5 +103,5 @@ button{
     color: darkgreen;
     font-size: 16px;
     border-radius:9px ;
-    border: 2px solid black;
+    outline: none;
 }

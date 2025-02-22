@@ -116,6 +116,7 @@ function omstartSpill() {
     spillFerdig = false
 
     fasit = getRandomHangmanWord();
+    console.log("Nytt ord er:", fasit);
     gjettetOrd = [];
 
     for (let i = 0; i < fasit.length; i++) {
